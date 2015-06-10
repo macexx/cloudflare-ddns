@@ -19,7 +19,7 @@ COPY install.sh /tmp/
 RUN chmod +x /tmp/install.sh && sleep 1 && /tmp/install.sh && rm /tmp/install.sh
 
 #########################################
-##      RUN CLOUDLARE UPDATE API       ##
+##      RUN CLOUDFLARE UPDATE API      ##
 #########################################
 ADD updateip.php /root/
 RUN chmod +x /root/updateip.php

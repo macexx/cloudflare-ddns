@@ -46,6 +46,8 @@ if [[ $(cat /etc/timezone) != $TZ ]] ; then
   echo "$TZ" > /etc/timezone
   dpkg-reconfigure -f noninteractive tzdata
 fi
+chmod +x /root/updateip.php
+chmod +x /etc/service/cf/run
 EOT
 
 chmod +x /root/updateip.php

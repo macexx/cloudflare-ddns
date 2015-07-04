@@ -36,6 +36,7 @@ apt-get install -qy php5-cli
 mkdir -p /etc/service/cf
 cat <<'EOT' > /etc/service/cf/run
 #!/bin/bash
+chmod +x /root/updateip.php
 /root/updateip.php
 EOT
 
@@ -46,12 +47,10 @@ if [[ $(cat /etc/timezone) != $TZ ]] ; then
   echo "$TZ" > /etc/timezone
   dpkg-reconfigure -f noninteractive tzdata
 fi
-chmod +x /root/updateip.php
 chmod +x /etc/service/cf/run
 EOT
+chmod 777 /root/updateip.php
 
-chmod +x /root/updateip.php
-chmod +x /etc/service/cf/run
 
 #########################################
 ##                 CLEANUP             ##

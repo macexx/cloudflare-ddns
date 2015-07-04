@@ -31,6 +31,14 @@ apt-get install -qy php5-cli
 #########################################
 
 # CONFIG
+
+# Cloudflare
+mkdir -p /etc/service/cf
+cat <<'EOT' > /etc/service/cf/run
+#!/bin/bash
+/root/updateip.php
+EOT
+
 cat <<'EOT' > /etc/my_init.d/00_config.sh
 #!/bin/bash
 # Fix the timezone
@@ -39,6 +47,9 @@ if [[ $(cat /etc/timezone) != $TZ ]] ; then
   dpkg-reconfigure -f noninteractive tzdata
 fi
 EOT
+
+chmod +x /root/updateip.php
+chmod +x /etc/service/cf/run
 
 #########################################
 ##                 CLEANUP             ##

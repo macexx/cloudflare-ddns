@@ -36,7 +36,6 @@ apt-get install -qy php5-cli
 mkdir -p /etc/service/cf
 cat <<'EOT' > /etc/service/cf/run
 #!/bin/bash
-chmod +x /root/updateip.php
 /root/updateip.php
 EOT
 
@@ -50,6 +49,8 @@ fi
 chmod +x /etc/service/cf/run
 EOT
 chmod 777 /root/updateip.php
+chmod +x /root/updateip.php
+chmod -R +x /etc/service/ /etc/my_init.d/
 
 
 #########################################

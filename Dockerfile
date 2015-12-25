@@ -1,5 +1,5 @@
 # Builds a docker image for CloudlFlare DYN-DNS
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage:0.9.18
 MAINTAINER Mace Capri <macecapri@gmail.com>
 # Based on the work of Marcus Hughes <hello@msh100.uk>
 
